@@ -2,6 +2,7 @@
 # REST API KULLANIMI
 
 Temel tanımını yapmak gerekirse; İki farklı kod parçasının birbirleri ile konuşabilmesi prensibine dayanır
+Youtube'a girip video arattığımızda içinde arattığımız kelimelerin geçtiği videolar gelmesi bir nevi API örneğidir.
 
 Örneğin IMDB’de sıralanmış popüler filmleri teker teker yazmaktansa API ile alabiliriz ve bu şekilde üzerlerinde kendi Frontend kodlarımızla harmanlayarak yeni bir proje elde edebiliriz. 
 
@@ -26,6 +27,9 @@ Burada REST API yapısı ile ilgili çok dikkat edilmesi gereken bir durum vard�
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dfd25885-9b3e-467b-ade3-6305fc44d070/Untitled.png)
 
 ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bebe6894-6e09-45cc-8c42-c9bd84b5491a/Untitled.png)
+
+- Veritabanına direkt olarak bir müdahale olmaması sayesinde hem güvenlik hem de veritabanının özelinde bozulmaması adına bir konfor oluşturulmuş olur.
+
 
 ## POSTMAN
 
