@@ -2,7 +2,9 @@
 # REST API KULLANIMI
 
 Temel tanımını yapmak gerekirse; İki farklı kod parçasının birbirleri ile konuşabilmesi prensibine dayanır
+
 Youtube'a girip video arattığımızda içinde arattığımız kelimelerin geçtiği videolar gelmesi bir nevi API örneğidir.
+Ya da klavyede enter tuşuna bastığımızda kodların gönderilmesi de bir API'dır. Burada sürecin nasıl işlediği ile ilgilenmeyiz. Sadece isteğimiz ve isteğimiz sonucunda aldığımız karşılık yani request ile ilgileniriz.  
 
 Örneğin IMDB’de sıralanmış popüler filmleri teker teker yazmaktansa API ile alabiliriz ve bu şekilde üzerlerinde kendi Frontend kodlarımızla harmanlayarak yeni bir proje elde edebiliriz. 
 
