@@ -36,3 +36,46 @@ Burada REST API yapısı ile ilgili çok dikkat edilmesi gereken bir durum vard�
 ## POSTMAN
 
 API Testlerinde sıklıkla kullanılan bir HTTP istemcisi(client)’dir. Uygulama henüz geliştirme aşamasındayken gelecek olan verileri burada test edebiliriz. Eğer direkt url çubuğuna gerekli adresi yapıştırırsak karışık bir json formatı alırız. Burada her yapı daha düzenlidir.
+
+## REST PRENSİPLERİ (KISITLAMALARI)
+
+1. **İstemci Sunucu (Client - Server) Modeli**
+    
+    İstemci requesti gönderen, sunucu ise çoğunlukla JSON formatında bir response gönderdiği formata dayanır. İki tarafın da net olarak verilerin nasıl alındığı ile ilgili bilgileri yoktur. 
+    
+2. **Uniform Interface**
+    
+    Aynı kaynağa gönderilen tüm istekler, isteğin nereden geldiğinden bağımsız olarak aynı şekilde görünmelidir.
+    
+    ***AYNI URI FAKAT FARKLI METHODLAR FARKLI SONUÇLAR(Parametreli paramteresiz gibi)***
+    
+    `…./users(get)`
+    
+    `…./users/11/comments(get) — 11 id’li kullanıcıya ait yorumlar` 
+    
+    ** İstemci verileri nasıl parse edeceğini bilmelidir ve bu gelen veriyi alırken değiştirebilir. 
+    
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7415dbbe-e2e4-4c90-8482-0f330f26d085/Untitled.png)
+
+1. **Durumsuzluk (Statelessness)**
+    
+    Yapılan her istekler birbirinden bağımsızdır. 
+    
+    Yapılan her istekte, giriş anahtarının belirtilmesi gerekir. İsteğin gerektirdiği tüm bilgilerin belirtilmesi gerekir. 
+    
+2. **Cashable (Örneklenebilirlik)**
+    
+    Cash Bellek bir nev-i ihtiyacımız olan bilgilere daha çabuk erişebilmek için işlemciye yakın bir yere kaydederek daha hızlı erişmemizi sağlayak bir cash klasöründen erişmemizi sağlayan bellektir.
+    
+    Client direkt sunucu ile iletişime geçmeyebilir. Arada, çok fazla isteği dengeleyip hızlı cevaplar verilmesini sağlayan balance katmanı ya da proxy gibi katmanlar bulunabilir. 
+    
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f7fcef6-9061-4735-abb8-c2ca02b679ee/Untitled.png)
+    
+
+1. **İsteğe Bağlı Kod**
+    
+    Sunucu istemciye extra kodlar gönderebilir, isteğe bağlıdır.
+    
+
+## HTPP NEDİR
