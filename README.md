@@ -77,5 +77,77 @@ API Testlerinde sıklıkla kullanılan bir HTTP istemcisi(client)’dir. Uygulam
     
     Sunucu istemciye extra kodlar gönderebilir, isteğe bağlıdır.
     
-
 ## HTPP NEDİR
+
+**İstemci ve sunucu arasında veri akışının kurallarını belirleyen protokoldür.** 
+
+- Waka şeklinde farklı protokoller de vardır. Sadece HTTP kullanılması zorunluluğu yoktur.
+
+ 
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a3b8db1b-3ef7-477c-81f9-7148d4924491/Untitled.png)
+
+- Boşlukların amacı header ve body’i birbirinden ayırmaktır.
+
+## HTTP DURUM KODLARI
+
+Sunucu tarafından ilgili isteğin sonucunu belirten sayısal ifadelerdir. 
+
+Bir nev-i örneğin MVC de site tasarlarken aldığımız cevaba göre kullanıcıya farklı ErrorPage’ler yöneltmemizi sağlayan alandır. 
+
+Hata kodları ilk kodlarına göre gruplandırılabilirler.
+
+**Informational responses (Bidirimsel cevaplar) (100–199)**
+
+- **100** Continue
+- **102** Processing —> istek sunucu tarafından alındı ama hala bir dönüş yok
+
+**Successful responses (Başarılı cevaplar) (200–299)**
+
+- **200** OK
+- **201** Created —> Sunucu tarafında yeni bir kaynak oluşturulur
+- **204** No Content —> Örneğin kullanıcı silindi. Bir body dönmez
+
+**Redirections (Yönlendirme cevapları) (300–399)**
+
+- **300** Multiple Choice —> Farklı uzantılı dosyalar için
+- **301** Moved Permanently —> Kaynak adresinin kalıcı değiştirldiğini belirtir. Yeni kaynak body’de belirtilir.
+- **304** Not Modified —> Genelde önbellek amaçlı kullanılır. Cashdeki cevabı verdi.
+
+**Client errors (İstemci Hataları) (400–499)**
+
+- **400** Bad Request —> Yeni kullanıcı için eksik parametre verirsek bu hata gelebilir.
+- **401** Unauthorized —> Gerekli kimlik doğrulaması yapılamamıştır.
+- **403** Forbidden —> Yetkimiz olmayan bir işlemi yapmamız gerekiyordur.
+- **404** Not Found —> O An için bulunmayan bir kaynağa erişmek istedik.
+- **405** Method Not Allowed
+
+**Server errors (Sunucu Hataları) (500–599)**
+
+- **500** Internal Server Error —> Sunucu istenilen cevabı veremiyordu
+- **503** Service Unavailable —> Sunucuda bir bakım vs. varsa bu dönebilir.
+
+## HTTP METHODLARI
+
+**GET**
+
+- Verileri almak - listelemek için kullanılan istek metodudur.
+
+**POST**
+
+- Belirli bir kaynağa veri göndermek için kullanılır.
+
+**PUT**
+
+- Belirli bir kaynaktaki verinin tamamının değiştirilmesi için kullanılan metodtur.
+- Sadece yaşı değiştirmek istesek bile diğer alanlara ait verileri de göndermek zorundayız. Where komutunun doğru karşılanması için.
+- `{ “name": "Gurcan", "age": 40}`
+
+**PATCH**
+
+- Belirli bir kaynaktaki verilerin bir kısmının değiştirilmesi için kullanılan metodtur.
+- `{ "name": "Gurcan"}`
+
+**DELETE**
+
+- Belirli bir kaynaktaki verilerin silinmesi için kullanılan metodtur.
